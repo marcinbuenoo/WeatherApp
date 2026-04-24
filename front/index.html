@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp | Consulta de Clima</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app__header">
+            <p class="badge">Atividade 4</p>
+            <h1>Consulta do Clima</h1>
+            <p class="subtitle">Digite uma cidade para ver as condicoes atuais em tempo real.</p>
+        </header>
+
+        <section class="search-panel" aria-label="Busca de cidade">
+            <form id="weather-form" class="search-form">
+                <label for="city-input">Cidade</label>
+                <div class="search-row">
+                    <input
+                        id="city-input"
+                        name="city"
+                        type="text"
+                        placeholder="Ex.: Sao Paulo"
+                        autocomplete="off"
+                    />
+                    <button type="submit" id="search-btn">Buscar</button>
+                </div>
+            </form>
+            <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="result-card" class="result-card hidden" aria-live="polite">
+            <div class="result-card__top">
+                <h2 id="location">-</h2>
+                <img id="weather-icon" alt="Icone do clima" />
+            </div>
+            <p id="condition" class="condition">-</p>
+            <dl class="metrics">
+                <div class="metric">
+                    <dt>Temperatura</dt>
+                    <dd id="temp">-</dd>
+                </div>
+                <div class="metric">
+                    <dt>Sensacao termica</dt>
+                    <dd id="feels-like">-</dd>
+                </div>
+                <div class="metric">
+                    <dt>Umidade</dt>
+                    <dd id="humidity">-</dd>
+                </div>
+            </dl>
+        </section>
+    </main>
+
+    <script src="./scripts/app.js"></script>
+</body>
+</html>

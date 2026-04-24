@@ -1,0 +1,65 @@
+/* 1. Use um modelo de caixa mais intuitivo */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remova margens e preenchimentos padrão que variam entre browsers */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* 3. Melhore a renderização de texto e altura da página */
+html {
+  color-scheme: light dark; /* Suporte nativo a dark mode */
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Torne o gerenciamento de imagens mais fácil */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Remova animações para pessoas que preferem redução de movimento (Acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 6. Evite que textos transbordem em layouts apertados */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Melhore a legibilidade de títulos com text-wrap balanceado */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/* 8. Remova o estilo padrão de botões e listas (opcional, mas recomendado) */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* 9. Garante que o scroll seja suave se o usuário não tiver restrições */
+html:focus-within {
+  scroll-behavior: smooth;
+}
